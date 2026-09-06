@@ -1,7 +1,7 @@
 import { Paper } from '@/types/paper';
 
 export const INITIAL_PAPERS: Paper[] = [
-  // Class 12
+  // Class 12 Science
   {
     id: 'paper-12-math-pb1-setA-2025',
     title: 'Mathematics - Pre-Board 1 (Set A)',
@@ -21,10 +21,7 @@ export const INITIAL_PAPERS: Paper[] = [
     viewsCount: 1250,
     tags: ['Calculus', 'Vectors', '3D Geometry', 'Matrices'],
     description: 'Pre-Board 1 Mathematics paper (Set A) for Class 12.',
-    generalInstructions: [
-      'This question paper contains 38 questions in 5 Sections A-E.',
-      'All questions are compulsory.'
-    ],
+    generalInstructions: ['38 questions in total across 5 Sections A-E.'],
     sections: [
       {
         sectionTitle: 'SECTION A - MCQs (1 Mark each)',
@@ -42,20 +39,9 @@ export const INITIAL_PAPERS: Paper[] = [
             text: 'Evaluate: ∫ eˣ (1/x - 1/x²) dx'
           }
         ]
-      },
-      {
-        sectionTitle: 'SECTION B - Short Answers',
-        instructions: '2 Marks each',
-        questions: [
-          {
-            questionNumber: 'Q3',
-            marks: 2,
-            text: 'Find the points on the curve y = x³ - 3x² - 9x + 7 at which the tangent is parallel to the x-axis.'
-          }
-        ]
       }
     ],
-    answerKeyContent: 'Solutions (Set A):\nQ1: |adj(A)| = |A|² = 64 => |A| = ±8 (Option a).\nQ2: eˣ/x + C.\nQ3: Points are (3, -20) and (-1, 12).'
+    answerKeyContent: 'Solutions (Set A):\nQ1: |adj(A)| = |A|² = 64 => |A| = ±8 (Option a).\nQ2: eˣ/x + C.'
   },
   {
     id: 'paper-12-math-pb1-setB-2025',
@@ -74,12 +60,8 @@ export const INITIAL_PAPERS: Paper[] = [
     uploadedBy: 'Department of Mathematics',
     downloadsCount: 310,
     viewsCount: 1100,
-    tags: ['Calculus', 'Vectors', '3D Geometry', 'Matrices'],
-    description: 'Pre-Board 1 Mathematics paper (Set B) for Class 12.',
-    generalInstructions: [
-      'This question paper contains 38 questions in 5 Sections A-E.',
-      'All questions are compulsory.'
-    ],
+    tags: ['Calculus', 'Vectors', 'Matrices'],
+    generalInstructions: ['All questions are compulsory.'],
     sections: [
       {
         sectionTitle: 'SECTION A - MCQs (1 Mark each)',
@@ -90,50 +72,11 @@ export const INITIAL_PAPERS: Paper[] = [
             marks: 1,
             text: 'If A is a square matrix of order 3 such that |A| = 4, then |adj(2A)| is:',
             subQuestions: ['(a) 64', '(b) 256', '(c) 1024', '(d) 512']
-          },
-          {
-            questionNumber: 'Q2',
-            marks: 1,
-            text: 'Evaluate: ∫ sin(2x) / (1 + cos²x) dx'
           }
         ]
       }
     ],
-    answerKeyContent: 'Solutions (Set B):\nQ1: |adj(2A)| = |2A|² = (2³·|A|)² = (8·4)² = 32² = 1024 (Option c).\nQ2: -ln(1 + cos²x) + C.'
-  },
-  {
-    id: 'paper-12-math-hy-2024',
-    title: 'Mathematics - PT-2 (Half Yearly)',
-    grade: '12',
-    stream: 'Science',
-    subject: 'Mathematics',
-    examType: 'PT-2 (Half Yearly)',
-    set: 'Standard / Common',
-    year: 2024,
-    session: '2024-2025',
-    duration: '3 Hours',
-    maxMarks: 80,
-    hasAnswerKey: true,
-    uploadedAt: '2024-09-22',
-    uploadedBy: 'Mathematics Faculty',
-    downloadsCount: 290,
-    viewsCount: 890,
-    tags: ['Calculus', 'Relations & Functions', 'Matrices'],
-    generalInstructions: ['All questions are compulsory.'],
-    sections: [
-      {
-        sectionTitle: 'Section A - 1 Mark each',
-        instructions: 'Objective questions',
-        questions: [
-          {
-            questionNumber: 'Q1',
-            marks: 1,
-            text: 'Let R be a relation on set A = {1, 2, 3} given by R = {(1, 1), (2, 2), (3, 3), (1, 2)}. Check if R is reflexive and symmetric.'
-          }
-        ]
-      }
-    ],
-    answerKeyContent: 'R is reflexive since (a,a) ∈ R for all a ∈ A. R is not symmetric since (1,2) ∈ R but (2,1) ∉ R.'
+    answerKeyContent: 'Solutions (Set B):\nQ1: |adj(2A)| = |2A|² = (8·4)² = 1024 (Option c).'
   },
   {
     id: 'paper-12-phys-pb2-setA-2025',
@@ -171,42 +114,147 @@ export const INITIAL_PAPERS: Paper[] = [
     answerKeyContent: 'Q1: (b) 90°'
   },
   {
-    id: 'paper-12-phys-pb2-setB-2025',
-    title: 'Physics - Pre-Board 2 (Set B)',
+    id: 'paper-12-chem-pb1-2025',
+    title: 'Chemistry - Pre-Board 1',
     grade: '12',
     stream: 'Science',
-    subject: 'Physics',
-    examType: 'Pre-Board 2',
-    set: 'Set B',
+    subject: 'Chemistry',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
     year: 2025,
     session: '2024-2025',
     duration: '3 Hours',
     maxMarks: 70,
     hasAnswerKey: true,
-    uploadedAt: '2025-01-20',
-    uploadedBy: 'Department of Physics',
-    downloadsCount: 275,
-    viewsCount: 920,
-    tags: ['Electrostatics', 'Magnetism', 'Wave Optics'],
-    generalInstructions: ['35 questions in all. All questions are compulsory.'],
+    uploadedAt: '2025-01-18',
+    uploadedBy: 'Department of Chemistry',
+    downloadsCount: 260,
+    viewsCount: 890,
+    tags: ['Solutions', 'Electrochemistry', 'Chemical Kinetics'],
+    generalInstructions: ['33 questions in total.'],
     sections: [
       {
-        sectionTitle: 'Section A - MCQs',
+        sectionTitle: 'Section A - Objective',
         instructions: '1 Mark each',
         questions: [
           {
             questionNumber: 'Q1',
             marks: 1,
-            text: 'The ratio of speed of light in vacuum to speed in medium of refractive index 1.5 is:',
-            subQuestions: ['(a) 1.5', '(b) 0.67', '(c) 1.0', '(d) 2.25']
+            text: 'Which of the following colligative properties is most suitable for determining molecular mass of polymers and proteins?',
+            subQuestions: ['(a) Osmotic pressure', '(b) Relative lowering of vapour pressure', '(c) Elevation in boiling point', '(d) Depression in freezing point']
           }
         ]
       }
     ],
-    answerKeyContent: 'Q1: (a) 1.5 (v = c/μ => c/v = μ = 1.5).'
+    answerKeyContent: 'Q1: (a) Osmotic pressure (measured at room temperature and has significant magnitude).'
+  },
+  {
+    id: 'paper-12-cs-pb1-2025',
+    title: 'Computer Science - Pre-Board 1',
+    grade: '12',
+    stream: 'Science',
+    subject: 'Computer Science',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
+    year: 2025,
+    session: '2024-2025',
+    duration: '3 Hours',
+    maxMarks: 70,
+    hasAnswerKey: true,
+    uploadedAt: '2025-01-22',
+    uploadedBy: 'Dept of Computer Science',
+    downloadsCount: 310,
+    viewsCount: 1050,
+    tags: ['Python', 'SQL', 'Data Structures', 'Networking'],
+    generalInstructions: ['All programming questions to be answered in Python 3.x.'],
+    sections: [
+      {
+        sectionTitle: 'Section A',
+        instructions: '1 Mark each',
+        questions: [
+          {
+            questionNumber: 'Q1',
+            marks: 1,
+            text: 'What will be the output of: print([i for i in range(1, 10, 2) if i % 3 == 0])?',
+            subQuestions: ['(a) [3, 9]', '(b) [3, 6, 9]', '(c) [1, 3, 5]', '(d) [9]']
+          }
+        ]
+      }
+    ],
+    answerKeyContent: 'Q1: (a) [3, 9]'
+  },
+  {
+    id: 'paper-12-psych-pb1-2025',
+    title: 'Psychology - Pre-Board 1',
+    grade: '12',
+    stream: 'Science',
+    subject: 'Psychology',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
+    year: 2025,
+    session: '2024-2025',
+    duration: '3 Hours',
+    maxMarks: 70,
+    hasAnswerKey: true,
+    uploadedAt: '2025-01-21',
+    uploadedBy: 'Dept of Psychology',
+    downloadsCount: 140,
+    viewsCount: 430,
+    tags: ['Variations in Psychological Attributes', 'Self and Personality'],
+    generalInstructions: ['All questions are compulsory.'],
+    sections: [
+      {
+        sectionTitle: 'Section A',
+        instructions: 'Objective',
+        questions: [
+          {
+            questionNumber: 'Q1',
+            marks: 1,
+            text: 'The PASS theory of intelligence was developed by:',
+            subQuestions: ['(a) J.P. Das, Jack Naglieri and Kirby', '(b) Howard Gardner', '(c) Charles Spearman', '(d) Robert Sternberg']
+          }
+        ]
+      }
+    ],
+    answerKeyContent: 'Q1: (a) J.P. Das, Jack Naglieri and Kirby.'
+  },
+  {
+    id: 'paper-12-painting-pb1-2025',
+    title: 'Painting - Pre-Board 1',
+    grade: '12',
+    stream: 'Science',
+    subject: 'Painting',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
+    year: 2025,
+    session: '2024-2025',
+    duration: '2 Hours',
+    maxMarks: 30,
+    hasAnswerKey: true,
+    uploadedAt: '2025-01-20',
+    uploadedBy: 'Fine Arts Department',
+    downloadsCount: 180,
+    viewsCount: 520,
+    tags: ['Rajasthani School', 'Mughal School', 'Modern Indian Art'],
+    generalInstructions: ['Theory examination: 30 Marks.'],
+    sections: [
+      {
+        sectionTitle: 'Section A',
+        instructions: '1 Mark each',
+        questions: [
+          {
+            questionNumber: 'Q1',
+            marks: 1,
+            text: 'The famous painting "Maru Ragini" belongs to which sub-school of Rajasthani miniature painting?',
+            subQuestions: ['(a) Mewar', '(b) Bundi', '(c) Kishangarh', '(d) Jaipur']
+          }
+        ]
+      }
+    ],
+    answerKeyContent: 'Q1: (a) Mewar.'
   },
 
-  // Class 11
+  // Class 11 Science
   {
     id: 'paper-11-math-pt1-setA-2024',
     title: 'Mathematics - PT-1 (Set A)',
@@ -242,24 +290,24 @@ export const INITIAL_PAPERS: Paper[] = [
     answerKeyContent: 'Total relations = 2^(3*2) = 2^6 = 64.'
   },
   {
-    id: 'paper-11-math-pt1-setB-2024',
-    title: 'Mathematics - PT-1 (Set B)',
+    id: 'paper-11-phys-pt1-2024',
+    title: 'Physics - PT-1',
     grade: '11',
     stream: 'Science',
-    subject: 'Mathematics',
+    subject: 'Physics',
     examType: 'PT-1',
-    set: 'Set B',
+    set: 'Standard / Common',
     year: 2024,
     session: '2024-2025',
     duration: '1.5 Hours',
     maxMarks: 40,
     hasAnswerKey: true,
-    uploadedAt: '2024-05-18',
-    uploadedBy: 'Dept of Mathematics',
-    downloadsCount: 170,
-    viewsCount: 490,
-    tags: ['Sets', 'Functions', 'Trigonometry'],
-    generalInstructions: ['All questions are compulsory.'],
+    uploadedAt: '2024-05-16',
+    uploadedBy: 'Physics Dept',
+    downloadsCount: 195,
+    viewsCount: 580,
+    tags: ['Units & Measurements', 'Motion in a Straight Line'],
+    generalInstructions: ['Time: 1.5 Hours. Max Marks: 40.'],
     sections: [
       {
         sectionTitle: 'Section A',
@@ -268,65 +316,31 @@ export const INITIAL_PAPERS: Paper[] = [
           {
             questionNumber: 'Q1',
             marks: 1,
-            text: 'Find the domain and range of the real function f(x) = √(9 - x²).'
+            text: 'State the number of significant figures in 0.00250 kg.'
           }
         ]
       }
     ],
-    answerKeyContent: 'Domain: [-3, 3], Range: [0, 3].'
+    answerKeyContent: '3 significant figures (2, 5, 0).'
   },
   {
-    id: 'paper-11-math-hy-2024',
-    title: 'Mathematics - PT-2 (Half Yearly)',
+    id: 'paper-11-chem-pt2-2024',
+    title: 'Chemistry - PT-2 (Half Yearly)',
     grade: '11',
     stream: 'Science',
-    subject: 'Mathematics',
+    subject: 'Chemistry',
     examType: 'PT-2 (Half Yearly)',
     set: 'Standard / Common',
     year: 2024,
     session: '2024-2025',
     duration: '3 Hours',
-    maxMarks: 80,
-    hasAnswerKey: true,
-    uploadedAt: '2024-09-25',
-    uploadedBy: 'Dept of Mathematics',
-    downloadsCount: 310,
-    viewsCount: 940,
-    tags: ['Trigonometry', 'Complex Numbers', 'Permutations'],
-    generalInstructions: ['38 questions in total.'],
-    sections: [
-      {
-        sectionTitle: 'Section A',
-        instructions: '1 Mark each',
-        questions: [
-          {
-            questionNumber: 'Q1',
-            marks: 1,
-            text: 'Find the value of sin(75°).'
-          }
-        ]
-      }
-    ],
-    answerKeyContent: 'sin(75°) = (√6 + √2)/4.'
-  },
-  {
-    id: 'paper-11-phys-annual-2024',
-    title: 'Physics - PT-4 (Annual)',
-    grade: '11',
-    stream: 'Science',
-    subject: 'Physics',
-    examType: 'PT-4 (Annual)',
-    set: 'Set A',
-    year: 2024,
-    session: '2023-2024',
-    duration: '3 Hours',
     maxMarks: 70,
     hasAnswerKey: true,
-    uploadedAt: '2024-03-01',
-    uploadedBy: 'Physics Dept',
-    downloadsCount: 380,
-    viewsCount: 1200,
-    tags: ['Mechanics', 'Thermodynamics', 'Waves'],
+    uploadedAt: '2024-09-24',
+    uploadedBy: 'Chemistry Dept',
+    downloadsCount: 290,
+    viewsCount: 880,
+    tags: ['Structure of Atom', 'Chemical Bonding', 'Periodic Properties'],
     generalInstructions: ['All questions are compulsory.'],
     sections: [
       {
@@ -336,22 +350,22 @@ export const INITIAL_PAPERS: Paper[] = [
           {
             questionNumber: 'Q1',
             marks: 1,
-            text: 'The dimensional formula of Universal Gravitational Constant G is:',
-            subQuestions: ['(a) [M⁻¹ L³ T⁻²]', '(b) [M¹ L² T⁻¹]', '(c) [M² L⁻¹ T⁻²]', '(d) [M⁻² L² T⁻¹]']
+            text: 'The shape of ClF3 molecule according to VSEPR theory is:',
+            subQuestions: ['(a) T-shaped', '(b) Trigonal planar', '(c) Trigonal bipyramidal', '(d) Bent']
           }
         ]
       }
     ],
-    answerKeyContent: 'Q1: (a) [M⁻¹ L³ T⁻²]'
+    answerKeyContent: 'Q1: (a) T-shaped (sp³d hybridization with 3 bond pairs and 2 lone pairs).'
   },
 
-  // Class 10
+  // Class 10 (No Stream - Subjects: English, Maths Standard/Basic, Punjabi, Hindi, SST, Science, AI, Marketing)
   {
-    id: 'paper-10-math-pb1-setA-2025',
-    title: 'Mathematics - Pre-Board 1 (Set A)',
+    id: 'paper-10-math-std-pb1-2025',
+    title: 'Mathematics (Standard) - Pre-Board 1 (Set A)',
     grade: '10',
     stream: 'General',
-    subject: 'Mathematics',
+    subject: 'Mathematics (Standard)',
     examType: 'Pre-Board 1',
     set: 'Set A',
     year: 2025,
@@ -364,7 +378,7 @@ export const INITIAL_PAPERS: Paper[] = [
     downloadsCount: 540,
     viewsCount: 1780,
     tags: ['Trigonometry', 'Quadratic Equations', 'Statistics'],
-    generalInstructions: ['38 questions in total. No calculators allowed.'],
+    generalInstructions: ['38 questions in total. Standard curriculum paper.'],
     sections: [
       {
         sectionTitle: 'Section A - 20 MCQs',
@@ -382,13 +396,13 @@ export const INITIAL_PAPERS: Paper[] = [
     answerKeyContent: 'Q1: (b) xy²'
   },
   {
-    id: 'paper-10-math-pb1-setB-2025',
-    title: 'Mathematics - Pre-Board 1 (Set B)',
+    id: 'paper-10-math-basic-pb1-2025',
+    title: 'Mathematics (Basic) - Pre-Board 1',
     grade: '10',
     stream: 'General',
-    subject: 'Mathematics',
+    subject: 'Mathematics (Basic)',
     examType: 'Pre-Board 1',
-    set: 'Set B',
+    set: 'Standard / Common',
     year: 2025,
     session: '2024-2025',
     duration: '3 Hours',
@@ -396,10 +410,115 @@ export const INITIAL_PAPERS: Paper[] = [
     hasAnswerKey: true,
     uploadedAt: '2025-01-10',
     uploadedBy: 'Class 10 Faculty',
-    downloadsCount: 490,
-    viewsCount: 1610,
-    tags: ['Trigonometry', 'Quadratic Equations', 'Circles'],
-    generalInstructions: ['38 questions in total. No calculators allowed.'],
+    downloadsCount: 380,
+    viewsCount: 1200,
+    tags: ['Basic Level Maths', 'Real Numbers', 'Polynomials'],
+    generalInstructions: ['38 questions in total. Basic curriculum paper.'],
+    sections: [
+      {
+        sectionTitle: 'Section A',
+        instructions: '1 Mark each',
+        questions: [
+          {
+            questionNumber: 'Q1',
+            marks: 1,
+            text: 'The HCF of 24 and 36 is:',
+            subQuestions: ['(a) 6', '(b) 12', '(c) 18', '(d) 24']
+          }
+        ]
+      }
+    ],
+    answerKeyContent: 'Q1: (b) 12'
+  },
+  {
+    id: 'paper-10-ai-pb1-2025',
+    title: 'Artificial Intelligence (AI) - Pre-Board 1',
+    grade: '10',
+    stream: 'General',
+    subject: 'Artificial Intelligence (AI)',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
+    year: 2025,
+    session: '2024-2025',
+    duration: '2 Hours',
+    maxMarks: 50,
+    hasAnswerKey: true,
+    uploadedAt: '2025-01-14',
+    uploadedBy: 'Dept of AI & Technology',
+    downloadsCount: 410,
+    viewsCount: 1350,
+    tags: ['AI Project Cycle', 'Computer Vision', 'NLP', 'Data Science'],
+    generalInstructions: ['Skill Subject Code 417. Max Marks: 50.'],
+    sections: [
+      {
+        sectionTitle: 'Section A - Employability Skills & Subject Skills',
+        instructions: '1 Mark each',
+        questions: [
+          {
+            questionNumber: 'Q1',
+            marks: 1,
+            text: 'Which domain of Artificial Intelligence deals with processing and understanding textual information by machines?',
+            subQuestions: ['(a) Computer Vision (CV)', '(b) Natural Language Processing (NLP)', '(c) Data Sciences', '(d) Neural Networks']
+          }
+        ]
+      }
+    ],
+    answerKeyContent: 'Q1: (b) Natural Language Processing (NLP).'
+  },
+  {
+    id: 'paper-10-punjabi-pb1-2025',
+    title: 'Punjabi - Pre-Board 1',
+    grade: '10',
+    stream: 'General',
+    subject: 'Punjabi',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
+    year: 2025,
+    session: '2024-2025',
+    duration: '3 Hours',
+    maxMarks: 80,
+    hasAnswerKey: true,
+    uploadedAt: '2025-01-12',
+    uploadedBy: 'Department of Punjabi',
+    downloadsCount: 460,
+    viewsCount: 1420,
+    tags: ['Punjabi Grammar', 'Literature', 'Sahit Mala', 'Vangi'],
+    generalInstructions: ['ਸਾਰੇ ਪ੍ਰਸ਼ਨ ਲਾਜ਼ਮੀ ਹਨ।'],
+    sections: [
+      {
+        sectionTitle: 'ਭਾਗ ੳ - ਪੜ੍ਹਨ ਕੌਸ਼ਲ ਅਤੇ ਵਿਆਕਰਣ',
+        instructions: '1 ਅੰਕ ਵਾਲੇ ਪ੍ਰਸ਼ਨ',
+        questions: [
+          {
+            questionNumber: 'ਪ੍ਰਸ਼ਨ 1',
+            marks: 1,
+            text: 'ਜਿਹੜੇ ਸ਼ਬਦ ਨਾਂਵ ਦੀ ਥਾਂ ਵਰਤੇ ਜਾਣ, ਉਹਨਾਂ ਨੂੰ ਕੀ ਆਖਦੇ ਹਨ?',
+            subQuestions: ['(ੳ) ਵਿਸ਼ੇਸ਼ਣ', '(ਅ) ਪੜਨਾਂਵ', '(ੲ) ਕਿਰਿਆ', '(ਸ) ਕਿਰਿਆ ਵਿਸ਼ੇਸ਼ਣ']
+          }
+        ]
+      }
+    ],
+    answerKeyContent: 'ਪ੍ਰਸ਼ਨ 1: (ਅ) ਪੜਨਾਂਵ।'
+  },
+  {
+    id: 'paper-10-sst-pb1-2025',
+    title: 'Social Science (SST) - Pre-Board 1',
+    grade: '10',
+    stream: 'General',
+    subject: 'Social Science (SST)',
+    examType: 'Pre-Board 1',
+    set: 'Standard / Common',
+    year: 2025,
+    session: '2024-2025',
+    duration: '3 Hours',
+    maxMarks: 80,
+    hasAnswerKey: true,
+    uploadedAt: '2025-01-11',
+    uploadedBy: 'Social Studies Faculty',
+    downloadsCount: 510,
+    viewsCount: 1680,
+    tags: ['History', 'Geography', 'Political Science', 'Economics'],
+    generalInstructions: ['37 questions in 6 sections.'],
     sections: [
       {
         sectionTitle: 'Section A - 20 MCQs',
@@ -408,22 +527,22 @@ export const INITIAL_PAPERS: Paper[] = [
           {
             questionNumber: 'Q1',
             marks: 1,
-            text: 'If LCM(a, 18) = 36 and HCF(a, 18) = 2, then value of a is:',
-            subQuestions: ['(a) 2', '(b) 3', '(c) 4', '(d) 1']
+            text: 'Who proclaimed the German Empire in the Hall of Mirrors at Versailles in January 1871?',
+            subQuestions: ['(a) Kaiser William I of Prussia', '(b) Otto von Bismarck', '(c) Victor Emmanuel II', '(d) Giuseppe Mazzini']
           }
         ]
       }
     ],
-    answerKeyContent: 'Q1: (c) 4 (a = 36*2/18 = 4).'
+    answerKeyContent: 'Q1: (a) Kaiser William I of Prussia.'
   },
 
   // Class 9
   {
-    id: 'paper-9-math-pt1-setA-2024',
-    title: 'Mathematics - PT-1 (Set A)',
+    id: 'paper-9-math-std-pt1-2024',
+    title: 'Mathematics (Standard) - PT-1 (Set A)',
     grade: '9',
     stream: 'General',
-    subject: 'Mathematics',
+    subject: 'Mathematics (Standard)',
     examType: 'PT-1',
     set: 'Set A',
     year: 2024,
@@ -454,24 +573,24 @@ export const INITIAL_PAPERS: Paper[] = [
     answerKeyContent: 'Q1: (c) a real number.'
   },
   {
-    id: 'paper-9-math-pt1-setB-2024',
-    title: 'Mathematics - PT-1 (Set B)',
+    id: 'paper-9-ai-pt2-2024',
+    title: 'Artificial Intelligence (AI) - PT-2 (Half Yearly)',
     grade: '9',
     stream: 'General',
-    subject: 'Mathematics',
-    examType: 'PT-1',
-    set: 'Set B',
+    subject: 'Artificial Intelligence (AI)',
+    examType: 'PT-2 (Half Yearly)',
+    set: 'Standard / Common',
     year: 2024,
     session: '2024-2025',
-    duration: '1.5 Hours',
-    maxMarks: 40,
+    duration: '2 Hours',
+    maxMarks: 50,
     hasAnswerKey: true,
-    uploadedAt: '2024-05-10',
-    uploadedBy: 'Class 9 Teachers',
-    downloadsCount: 205,
-    viewsCount: 640,
-    tags: ['Number Systems', 'Coordinate Geometry'],
-    generalInstructions: ['Time: 1.5 Hours. Max Marks: 40.'],
+    uploadedAt: '2024-09-21',
+    uploadedBy: 'AI Faculty',
+    downloadsCount: 290,
+    viewsCount: 840,
+    tags: ['Introduction to AI', 'AI Ethics', 'Python Basics'],
+    generalInstructions: ['Code 417. Time: 2 Hours.'],
     sections: [
       {
         sectionTitle: 'Section A',
@@ -480,46 +599,47 @@ export const INITIAL_PAPERS: Paper[] = [
           {
             questionNumber: 'Q1',
             marks: 1,
-            text: 'The value of (256)^(0.16) × (256)^(0.09) is:',
-            subQuestions: ['(a) 4', '(b) 16', '(c) 64', '(d) 256.25']
+            text: 'Which of the following is an example of Smart Assistant based on AI?',
+            subQuestions: ['(a) Alexa', '(b) Siri', '(c) Google Assistant', '(d) All of the above']
           }
         ]
       }
     ],
-    answerKeyContent: 'Q1: (a) 4 (256^(0.25) = (4^4)^(1/4) = 4).'
+    answerKeyContent: 'Q1: (d) All of the above.'
   },
   {
-    id: 'paper-9-math-annual-2024',
-    title: 'Mathematics - PT-4 (Annual)',
+    id: 'paper-9-marketing-pt4-2024',
+    title: 'Marketing - PT-4 (Annual)',
     grade: '9',
     stream: 'General',
-    subject: 'Mathematics',
+    subject: 'Marketing',
     examType: 'PT-4 (Annual)',
     set: 'Standard / Common',
     year: 2024,
     session: '2023-2024',
-    duration: '3 Hours',
-    maxMarks: 80,
+    duration: '2 Hours',
+    maxMarks: 50,
     hasAnswerKey: true,
-    uploadedAt: '2024-03-05',
-    uploadedBy: 'School Library Staff',
-    downloadsCount: 310,
-    viewsCount: 1100,
-    tags: ['Full Syllabus', 'Mensuration', 'Statistics'],
-    generalInstructions: ['38 questions across 5 sections.'],
+    uploadedAt: '2024-03-04',
+    uploadedBy: 'Vocational Dept',
+    downloadsCount: 190,
+    viewsCount: 560,
+    tags: ['Marketing Mix', 'Consumer Behavior'],
+    generalInstructions: ['Max Marks: 50.'],
     sections: [
       {
         sectionTitle: 'Section A',
-        instructions: '1 Mark each',
+        instructions: 'Questions',
         questions: [
           {
             questionNumber: 'Q1',
             marks: 1,
-            text: 'Find the area of a triangle whose sides are 13 cm, 14 cm and 15 cm using Heron’s formula.'
+            text: 'The 4 Ps of Marketing are Product, Price, Place, and:',
+            subQuestions: ['(a) Promotion', '(b) Profit', '(c) People', '(d) Process']
           }
         ]
       }
     ],
-    answerKeyContent: 's = 21 cm. Area = √(21·8·7·6) = 84 cm².'
+    answerKeyContent: 'Q1: (a) Promotion.'
   }
 ];

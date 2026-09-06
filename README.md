@@ -13,9 +13,12 @@
 
 - **🔍 Multi-Level Instant Filter Engine**:
   - **Grades**: Class 9th, 10th, 11th, 12th
-  - **Streams (for 11th & 12th)**: Science (PCM/PCB/CS), Commerce, Humanities / Arts
-  - **Exam Categories**: Unit Tests, Mid-Terms / Half-Yearly, Pre-Boards (1 & 2), Annual / Board Exams
-  - **Subjects**: Mathematics, Physics, Chemistry, Biology, Computer Science (Python), English Core, Accountancy, Economics, Social Science, and more.
+  - **Streams (for 11th & 12th only)**: Science, Commerce
+  - **Exam Categories**: PT-1, PT-2 (Half Yearly), PT-3, PT-4 (Annual for 9th/11th), Pre-Board 1 & 2 (for 10th/12th)
+  - **Subjects**:
+    - *9th & 10th*: English, Maths (Standard), Maths (Basic), Science, Social Science (SST), Punjabi, Hindi, Artificial Intelligence (AI), Marketing
+    - *11th & 12th Science*: Physics, Chemistry, Mathematics, Biology, Computer Science, Painting, Psychology, English Core, Physical Education
+    - *11th & 12th Commerce*: Accountancy, Business Studies, Economics, Mathematics, Painting, Psychology, English Core, Physical Education, Computer Science
 - **📄 In-Browser Document & PDF Viewer**:
   - Interactive exam format preview with official instructions and sections.
   - Zoom in/out, print simulator (`window.print()`), and instant text/PDF file download.

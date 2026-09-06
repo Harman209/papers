@@ -1,6 +1,6 @@
 export type Grade = '9' | '10' | '11' | '12';
 
-export type Stream = 'Science' | 'Commerce' | 'Humanities' | 'General';
+export type Stream = 'Science' | 'Commerce' | 'General';
 
 export type PaperSet = 'Set A' | 'Set B' | 'Standard / Common';
 
@@ -13,19 +13,29 @@ export type ExamType =
   | 'Pre-Board 2';
 
 export type Subject = 
-  | 'Mathematics'
+  // 9th & 10th Subjects
+  | 'English'
+  | 'Mathematics (Standard)'
+  | 'Mathematics (Basic)'
+  | 'Science'
+  | 'Social Science (SST)'
+  | 'Punjabi'
+  | 'Hindi'
+  | 'Artificial Intelligence (AI)'
+  | 'Marketing'
+  // 11th & 12th Subjects
   | 'Physics'
   | 'Chemistry'
+  | 'Mathematics'
   | 'Biology'
-  | 'Computer Science / IP'
-  | 'English Core'
+  | 'Computer Science'
+  | 'Painting'
+  | 'Psychology'
   | 'Accountancy'
-  | 'Economics'
   | 'Business Studies'
-  | 'Social Science'
-  | 'Science (General)'
-  | 'History & Civics'
-  | 'Geography';
+  | 'Economics'
+  | 'English Core'
+  | 'Physical Education';
 
 export interface ExamQuestion {
   questionNumber: string;

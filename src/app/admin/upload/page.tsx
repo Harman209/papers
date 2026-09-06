@@ -1,26 +1,11 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { usePapers } from '@/context/PaperContext';
 import { Grade, Stream, ExamType, Subject, PaperSet, ExamSection } from '@/types/paper';
-
-const SUBJECT_LIST: Subject[] = [
-  'Mathematics',
-  'Physics',
-  'Chemistry',
-  'Biology',
-  'Computer Science / IP',
-  'English Core',
-  'Accountancy',
-  'Economics',
-  'Business Studies',
-  'Science (General)',
-  'Social Science',
-  'History & Civics',
-  'Geography'
-];
+import { getAvailableSubjects } from '@/data/subjectConfig';
 
 export default function TeacherUploadPage() {
   const router = useRouter();
@@ -48,6 +33,16 @@ export default function TeacherUploadPage() {
   // File drag and drop state
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+
+  // Dynamic available subjects
+  const availableSubjects = getAvailableSubjects(grade, grade === '9' || grade === '10' ? 'General' : stream);
+
+  // Auto update subject when grade or stream changes if current subject is not in list
+  useEffect(() => {
+    if (!availableSubjects.includes(subject)) {
+      setSubject(availableSubjects[0]);
+    }
+  }, [grade, stream, availableSubjects, subject]);
 
   const [instructionsInput, setInstructionsInput] = useState(
     'All questions are compulsory.\nUse of calculators is strictly prohibited.\nRead questions carefully before writing.'
@@ -86,6 +81,8 @@ export default function TeacherUploadPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successToast, setSuccessToast] = useState(false);
 
+  const isJuniorClass = grade === '9' || grade === '10';
+
   const handlePinSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (pin === '1234' || pin === 'admin') {
@@ -115,12 +112,13 @@ export default function TeacherUploadPage() {
     setIsSubmitting(true);
 
     const generalInstructions = instructionsInput.split('\n').map((i) => i.trim()).filter(Boolean);
+    const effectiveStream = isJuniorClass ? 'General' : stream;
     const paperTitle = title || `${subject} - ${examType} ${set !== 'Standard / Common' ? `(${set})` : ''}`;
 
     addPaper({
       title: paperTitle,
       grade,
-      stream,
+      stream: effectiveStream,
       subject,
       examType,
       set,
@@ -211,7 +209,7 @@ export default function TeacherUploadPage() {
             Upload Question Paper
           </h1>
           <p className="text-xs text-zinc-500 mt-0.5">
-            Add a newly scanned paper (Set A / Set B) to the archive
+            Swami Sant Dass Public School • Add master paper (Set A / Set B)
           </p>
         </div>
         <Link
@@ -299,11 +297,11 @@ export default function TeacherUploadPage() {
             {/* Title */}
             <div className="sm:col-span-2">
               <label className="block text-zinc-600 dark:text-zinc-400 mb-1">
-                Paper Title
+                Paper Title (Optional - auto generated)
               </label>
               <input
                 type="text"
-                placeholder="e.g. Mathematics - Pre-Board 1"
+                placeholder={`e.g. ${subject} - ${examType}`}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full rounded border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-zinc-900 focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
@@ -318,12 +316,52 @@ export default function TeacherUploadPage() {
               <select
                 value={grade}
                 onChange={(e) => setGrade(e.target.value as Grade)}
-                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 font-medium focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
               >
-                <option value="9">Class 9</option>
-                <option value="10">Class 10</option>
+                <option value="9">Class 9 (No Stream)</option>
+                <option value="10">Class 10 (No Stream)</option>
                 <option value="11">Class 11</option>
                 <option value="12">Class 12</option>
+              </select>
+            </div>
+
+            {/* Stream (Only for 11th & 12th: Science / Commerce) */}
+            <div>
+              <label className="block text-zinc-600 dark:text-zinc-400 mb-1">
+                Stream {isJuniorClass ? '(Not applicable for 9th/10th)' : '(11th & 12th)'}
+              </label>
+              <select
+                disabled={isJuniorClass}
+                value={isJuniorClass ? 'General' : stream}
+                onChange={(e) => setStream(e.target.value as Stream)}
+                className={`w-full rounded border border-zinc-200 px-2.5 py-1.5 text-zinc-900 font-medium focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 ${
+                  isJuniorClass ? 'bg-zinc-100 text-zinc-400 dark:bg-zinc-800/40 cursor-not-allowed' : 'bg-zinc-50'
+                }`}
+              >
+                {isJuniorClass ? (
+                  <option value="General">General (No Stream)</option>
+                ) : (
+                  <>
+                    <option value="Science">Science</option>
+                    <option value="Commerce">Commerce</option>
+                  </>
+                )}
+              </select>
+            </div>
+
+            {/* Subject (Dynamically filtered based on class & stream) */}
+            <div>
+              <label className="block text-zinc-600 dark:text-zinc-400 mb-1">
+                Subject ({availableSubjects.length} available)
+              </label>
+              <select
+                value={subject}
+                onChange={(e) => setSubject(e.target.value as Subject)}
+                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 font-medium focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+              >
+                {availableSubjects.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
               </select>
             </div>
 
@@ -343,22 +381,6 @@ export default function TeacherUploadPage() {
               </select>
             </div>
 
-            {/* Subject */}
-            <div>
-              <label className="block text-zinc-600 dark:text-zinc-400 mb-1">
-                Subject
-              </label>
-              <select
-                value={subject}
-                onChange={(e) => setSubject(e.target.value as Subject)}
-                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
-              >
-                {SUBJECT_LIST.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
-              </select>
-            </div>
-
             {/* Exam Type */}
             <div>
               <label className="block text-zinc-600 dark:text-zinc-400 mb-1">
@@ -367,31 +389,23 @@ export default function TeacherUploadPage() {
               <select
                 value={examType}
                 onChange={(e) => setExamType(e.target.value as ExamType)}
-                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 font-medium focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
               >
-                <option value="PT-1">PT-1</option>
-                <option value="PT-2 (Half Yearly)">PT-2 (Half Yearly)</option>
-                <option value="PT-3">PT-3</option>
-                <option value="PT-4 (Annual)">PT-4 (Annual)</option>
-                <option value="Pre-Board 1">Pre-Board 1</option>
-                <option value="Pre-Board 2">Pre-Board 2</option>
-              </select>
-            </div>
-
-            {/* Stream */}
-            <div>
-              <label className="block text-zinc-600 dark:text-zinc-400 mb-1">
-                Stream (11th & 12th)
-              </label>
-              <select
-                value={stream}
-                onChange={(e) => setStream(e.target.value as Stream)}
-                className="w-full rounded border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-zinc-900 focus:border-zinc-400 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
-              >
-                <option value="General">General / All</option>
-                <option value="Science">Science</option>
-                <option value="Commerce">Commerce</option>
-                <option value="Humanities">Humanities</option>
+                {isJuniorClass ? (
+                  <>
+                    <option value="PT-1">PT-1</option>
+                    <option value="PT-2 (Half Yearly)">PT-2 (Half Yearly)</option>
+                    <option value="PT-3">PT-3</option>
+                    <option value="PT-4 (Annual)">PT-4 (Annual)</option>
+                  </>
+                ) : (
+                  <>
+                    <option value="PT-1">PT-1</option>
+                    <option value="PT-2 (Half Yearly)">PT-2 (Half Yearly)</option>
+                    <option value="Pre-Board 1">Pre-Board 1</option>
+                    <option value="Pre-Board 2">Pre-Board 2</option>
+                  </>
+                )}
               </select>
             </div>
 
