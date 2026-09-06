@@ -78,6 +78,34 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* Student Builder Bio */}
+        <section className="space-y-2 border-t border-zinc-200 pt-6 dark:border-zinc-800">
+          <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100 lowercase">
+            built by students, for students
+          </h2>
+          <p className="text-xs text-zinc-600 dark:text-zinc-400">
+            this archive was initiated and built by <span className="font-semibold text-zinc-900 dark:text-zinc-100">Harman Kajla</span>, a student at swami sant dass public school interested in computer science and building practical systems. built by students, for students.
+          </p>
+          <div className="pt-1 flex items-center gap-4 text-xs">
+            <a
+              href="https://github.com/Harman209"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 underline"
+            >
+              github
+            </a>
+            <a
+              href="https://linkedin.com/in/harmankajla"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 underline"
+            >
+              linkedin
+            </a>
+          </div>
+        </section>
+
         <section className="space-y-2 border-t border-zinc-200 pt-6 dark:border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
             Open Source License
