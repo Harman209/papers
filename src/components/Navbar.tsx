@@ -21,14 +21,20 @@ export default function Navbar() {
         document.documentElement.classList.remove('dark');
       }
     } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initial = prefersDark ? 'dark' : 'light';
-      setTheme(initial);
-      if (initial === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const applySystemTheme = (matches: boolean) => {
+        const next = matches ? 'dark' : 'light';
+        setTheme(next);
+        if (next === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+      applySystemTheme(mediaQuery.matches);
+      const listener = (e: MediaQueryListEvent) => applySystemTheme(e.matches);
+      mediaQuery.addEventListener('change', listener);
+      return () => mediaQuery.removeEventListener('change', listener);
     }
   }, []);
 

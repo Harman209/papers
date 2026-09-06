@@ -1,82 +1,46 @@
-# 📚 OpenPaper — School Question Paper Digital Archive
+# papers
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-38bdf8)](https://tailwindcss.com/)
-[![Grades](https://img.shields.io/badge/Classes-9th%20to%2012th-indigo)](https://github.com/Harman209/papers)
+an open archive of past question papers and answer keys for students at swami sant dass public school, jalandhar (classes 9th to 12th).
 
-> A modern, open-source web application designed to digitize physical school library question papers for students in **Grades 9th, 10th, 11th, and 12th**. Provides 24/7 exam revision access, fast search filters, solution keys, in-browser reading, and a teacher contribution portal.
+built to make finding old exams effortless. no paywalls, no login hurdles, no bloated ui.
 
 ---
 
-## 🌟 Features
+### what's here
 
-- **🔍 Multi-Level Instant Filter Engine**:
-  - **Grades**: Class 9th, 10th, 11th, 12th
-  - **Streams (for 11th & 12th only)**: Science, Commerce
-  - **Exam Categories**: PT-1, PT-2 (Half Yearly), PT-3, PT-4 (Annual for 9th/11th), Pre-Board 1 & 2 (for 10th/12th)
-  - **Subjects**:
-    - *9th & 10th*: English, Maths (Standard), Maths (Basic), Science, Social Science (SST), Punjabi, Hindi, Artificial Intelligence (AI), Marketing
-    - *11th & 12th Science*: Physics, Chemistry, Mathematics, Biology, Computer Science, Painting, Psychology, English Core, Physical Education
-    - *11th & 12th Commerce*: Accountancy, Business Studies, Economics, Mathematics, Painting, Psychology, English Core, Physical Education, Computer Science
-- **📄 In-Browser Document & PDF Viewer**:
-  - Interactive exam format preview with official instructions and sections.
-  - Zoom in/out, print simulator (`window.print()`), and instant text/PDF file download.
-  - Toggleable official teacher solution keys & marking schemes.
-- **📌 Saved Papers / Bookmarks**:
-  - Students can bookmark challenging exam papers to quickly revisit during final board preparation.
-- **👩‍🏫 Faculty / Staff Upload Portal**:
-  - Drag-and-drop scanner upload with metadata tagging.
-  - Demo PIN code protection (`1234`) ensuring only authorized faculty can publish official question papers.
-- **📊 Executive Principal Pitch View (`/pitch`)**:
-  - Dedicated presentation dashboard outlining the school benefits, $0 cloud hosting blueprint, and library paperless initiative.
+- **classes**: 9th, 10th, 11th, and 12th
+- **streams**: science and commerce (11th & 12th)
+- **exams**: pt-1, pt-2 (half yearly), pt-3, pt-4 (annual), pre-boards (1 & 2)
+- **features**: set a/b variants, clean in-browser reader, verified marking schemes, fast downloads
 
 ---
 
-## 🚀 Quick Start
+### contributing
 
-### 1. Clone & Install
-```bash
-git clone https://github.com/Harman209/papers.git
-cd papers
-npm install
-```
+if you have question papers or want to help improve this archive, contributions are very welcome:
 
-### 2. Run Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+1. **adding question papers**:
+   - if you have physical or scanned copies of past unit tests, term exams, or pre-boards from ssdps, upload them via the `/admin/upload` page or open a pull request adding them to `src/data/mockPapers.ts`.
+   - please make sure the class, subject, set (set a / set b), exam type, and year are clearly indicated.
 
-### 3. Production Build
-```bash
-npm run build
-npm run start
-```
+2. **marking schemes & solutions**:
+   - verified answer keys or solutions can be submitted alongside papers or updated in existing entries.
+
+3. **fixing errors**:
+   - found a typo in a question, wrong subject mapping, or missing section? open an issue or submit a pr.
+
+4. **code & ui**:
+   - keep things minimal, fast, and accessible. avoid heavy libraries or unnecessary visual clutter.
 
 ---
 
-## 🏛️ Pitching to the School Principal
+### school info
 
-When presenting this project to school leadership, navigate to `/pitch` or use these primary talking points:
-
-1. **Academic Equity**: Eliminates library queues and master copy bottlenecks so every student can prepare for board exams from home.
-2. **Zero Financial Cost**: Designed to run seamlessly on free tiers (Vercel Serverless + Supabase / Cloudflare R2 / GitHub Pages).
-3. **Eco-Friendly Paperless Campus**: Saves hundreds of photocopies and master prints per academic session.
-4. **Staff-Controlled Publishing**: Moderated upload portal prevents unauthorized or invalid uploads.
+swami sant dass public school, jalandhar  
+website: [swamisantdass.com](https://swamisantdass.com)
 
 ---
 
-## 🛠️ Tech Stack
+### license
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router, Turbopack)
-- **Language**: TypeScript
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **State & Storage**: React Context + LocalStorage persistence
-
----
-
-## 📄 License
-
-This project is open-source software licensed under the [MIT License](LICENSE).
+licensed under the [mit license](LICENSE). open for everyone.
