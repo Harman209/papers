@@ -48,13 +48,14 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-4xl items-center justify-between px-6 sm:px-8">
         
         {/* School Logo + App Name Header */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3.5 group">
           <Image
             src="/school-logo.png"
             alt="Swami Sant Dass Public School"
-            width={38}
-            height={38}
-            className="h-9 w-9 object-contain shrink-0"
+            width={140}
+            height={122}
+            className="h-11 sm:h-12 w-auto object-contain shrink-0"
+            unoptimized
             priority
           />
           <div className="flex flex-col justify-center">
