@@ -48,22 +48,22 @@ export default function RootLayout({
           <PaperViewerModal />
           
           {/* Minimal Clean Footer */}
-          <footer className="border-t border-zinc-100 bg-white dark:border-zinc-900 dark:bg-zinc-950 py-6 px-6 sm:px-8 text-xs text-zinc-400">
-            <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
+          <footer className="border-t border-zinc-100 bg-white dark:border-zinc-900 dark:bg-zinc-950 py-6 px-4 sm:px-8 text-xs text-zinc-400">
+            <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                 <a
                   href="https://swamisantdass.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                 >
-                  Swami Sant Dass Public School, Jalandhar
+                  Swami Sant Dass Public School
                 </a>
                 <span>•</span>
                 <span>Library Archive</span>
               </div>
 
-              <div className="flex items-center gap-5">
+              <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-2">
                 <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
                   Archive
                 </Link>
@@ -79,7 +79,7 @@ export default function RootLayout({
                   rel="noopener noreferrer"
                   className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                 >
-                  MIT License / Contribute
+                  Contribute
                 </a>
               </div>
             </div>

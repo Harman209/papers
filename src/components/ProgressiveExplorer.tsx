@@ -158,7 +158,7 @@ export default function ProgressiveExplorer() {
       
       {/* Breadcrumbs when steps are underway */}
       {selectedGrade && (
-        <div className="flex items-center gap-2 text-xs text-zinc-400">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-zinc-400">
           <button
             onClick={() => {
               setSelectedGrade(null);
@@ -207,22 +207,22 @@ export default function ProgressiveExplorer() {
 
       {/* STEP 1: Select Class */}
       {!selectedGrade && (
-        <div className="py-12 sm:py-20 text-center space-y-8 animate-in fade-in duration-300">
+        <div className="py-8 sm:py-20 text-center space-y-6 sm:space-y-8 animate-in fade-in duration-300">
           <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
               Select your class
             </h2>
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400">
               Choose a class to view past examination question papers
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2 max-w-xs sm:max-w-none mx-auto">
             {GRADES.map((g) => (
               <button
                 key={g.grade}
                 onClick={() => setSelectedGrade(g.grade)}
-                className="w-32 py-5 border border-zinc-200 hover:border-zinc-900 text-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:hover:border-zinc-100 font-medium text-base rounded transition-colors"
+                className="w-full sm:w-32 py-4 sm:py-5 border border-zinc-200 hover:border-zinc-900 text-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:hover:border-zinc-100 font-medium text-sm sm:text-base rounded transition-colors"
               >
                 {g.label}
               </button>
@@ -243,29 +243,29 @@ export default function ProgressiveExplorer() {
 
       {/* STEP 2: Select Examination Type */}
       {selectedGrade && !selectedExam && (
-        <div className="py-10 text-center space-y-8 animate-in fade-in duration-300">
+        <div className="py-6 sm:py-10 text-center space-y-6 sm:space-y-8 animate-in fade-in duration-300">
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-lg sm:text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
               Select examination for Class {selectedGrade}
             </h2>
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400">
               {isBoardClass ? 'Periodic tests & pre-board examinations' : 'Periodic tests (PT-1 to PT-4)'}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-xl mx-auto pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 max-w-xl mx-auto pt-2">
             {availableExams.map((exam) => (
               <button
                 key={exam}
                 onClick={() => setSelectedExam(exam)}
-                className="px-5 py-3 border border-zinc-200 hover:border-zinc-900 text-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:hover:border-zinc-100 text-sm font-medium rounded transition-colors"
+                className="px-3.5 sm:px-5 py-2.5 sm:py-3 border border-zinc-200 hover:border-zinc-900 text-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:hover:border-zinc-100 text-xs sm:text-sm font-medium rounded transition-colors"
               >
                 {exam}
               </button>
             ))}
             <button
               onClick={() => setSelectedExam('All')}
-              className="px-5 py-3 border border-dashed border-zinc-200 hover:border-zinc-900 text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-100 text-sm rounded transition-colors"
+              className="px-3.5 sm:px-5 py-2.5 sm:py-3 border border-dashed border-zinc-200 hover:border-zinc-900 text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-100 text-xs sm:text-sm rounded transition-colors"
             >
               All Examinations
             </button>
@@ -275,29 +275,29 @@ export default function ProgressiveExplorer() {
 
       {/* STEP 3: Select Academic Year */}
       {selectedGrade && selectedExam && !selectedYear && (
-        <div className="py-10 text-center space-y-8 animate-in fade-in duration-300">
+        <div className="py-6 sm:py-10 text-center space-y-6 sm:space-y-8 animate-in fade-in duration-300">
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-lg sm:text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
               Select examination year
             </h2>
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400">
               Class {selectedGrade} • {selectedExam}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto pt-2">
             {YEARS.map((y) => (
               <button
                 key={y}
                 onClick={() => setSelectedYear(y)}
-                className="w-28 py-4 border border-zinc-200 hover:border-zinc-900 text-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:hover:border-zinc-100 font-medium text-sm rounded transition-colors"
+                className="w-full sm:w-28 py-3 sm:py-4 border border-zinc-200 hover:border-zinc-900 text-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:hover:border-zinc-100 font-medium text-xs sm:text-sm rounded transition-colors"
               >
                 {y}
               </button>
             ))}
             <button
               onClick={() => setSelectedYear('All')}
-              className="px-5 py-4 border border-dashed border-zinc-200 hover:border-zinc-900 text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-100 text-sm rounded transition-colors"
+              className="w-full sm:w-auto px-4 sm:px-5 py-3 sm:py-4 border border-dashed border-zinc-200 hover:border-zinc-900 text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-100 text-xs sm:text-sm rounded transition-colors"
             >
               All Years
             </button>
@@ -307,12 +307,12 @@ export default function ProgressiveExplorer() {
 
       {/* STEP 4: Papers Display */}
       {selectedGrade && selectedExam && selectedYear && (
-        <div className="space-y-8 animate-in fade-in duration-300">
+        <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300">
           
           {/* Active selection summary & search bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-100 pb-4 dark:border-zinc-900">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-100 pb-4 dark:border-zinc-900">
             <div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                 Class {selectedGrade} • {selectedExam}
               </h2>
               <p className="text-xs text-zinc-400 mt-0.5">
@@ -327,7 +327,7 @@ export default function ProgressiveExplorer() {
                 placeholder="Filter by subject..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full border-b border-zinc-200 bg-transparent py-1.5 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-900 focus:outline-none dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-zinc-100"
+                className="w-full border-b border-zinc-200 bg-transparent py-1 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-900 focus:outline-none dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-zinc-100"
               />
             </div>
           </div>

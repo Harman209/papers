@@ -51,31 +51,32 @@ export default function Navbar() {
 
   return (
     <header className="w-full border-b border-zinc-100 bg-white dark:border-zinc-900 dark:bg-zinc-950 transition-colors">
-      <div className="mx-auto flex h-20 max-w-4xl items-center justify-between px-6 sm:px-8">
+      <div className="mx-auto flex h-16 sm:h-20 max-w-4xl items-center justify-between px-4 sm:px-8">
         
         {/* School Logo + App Name Header */}
-        <Link href="/" className="flex items-center gap-3.5 group">
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
           <Image
             src="/school-logo.png"
             alt="Swami Sant Dass Public School"
             width={140}
             height={122}
-            className="h-11 sm:h-12 w-auto object-contain shrink-0"
+            className="h-8 sm:h-12 w-auto object-contain shrink-0"
             unoptimized
             priority
           />
           <div className="flex flex-col justify-center">
-            <span className="font-bold text-zinc-900 dark:text-zinc-100 text-xl sm:text-2xl tracking-tight lowercase leading-tight">
+            <span className="font-bold text-zinc-900 dark:text-zinc-100 text-lg sm:text-2xl tracking-tight lowercase leading-tight">
               papers
             </span>
-            <span className="text-[11px] text-zinc-400 font-medium tracking-wide">
-              Swami Sant Dass Public School
+            <span className="text-[10px] sm:text-[11px] text-zinc-400 font-medium tracking-wide">
+              <span className="hidden sm:inline">Swami Sant Dass Public School</span>
+              <span className="sm:hidden">SSDPS</span>
             </span>
           </div>
         </Link>
 
         {/* Action Navigation + Corner Theme Switch */}
-        <div className="flex items-center gap-6 sm:gap-8 text-sm">
+        <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm">
           <Link
             href="/"
             className={`transition-colors ${
@@ -110,7 +111,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             aria-label="Toggle theme"
             title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-            className="rounded p-1.5 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
+            className="rounded p-1 sm:p-1.5 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
           >
             {mounted && theme === 'dark' ? (
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">

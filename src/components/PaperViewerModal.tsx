@@ -84,20 +84,20 @@ ${selectedPaper.answerKeyContent}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Clean Minimal Header Bar */}
-        <div className="flex flex-wrap items-center justify-between border-b border-zinc-200 bg-zinc-50 px-4 py-2.5 dark:border-zinc-800 dark:bg-zinc-950 gap-2 text-xs">
-          <div>
+        <div className="flex items-center justify-between border-b border-zinc-200 bg-zinc-50 px-3 sm:px-4 py-2 sm:py-2.5 dark:border-zinc-800 dark:bg-zinc-950 gap-2 text-xs">
+          <div className="truncate min-w-0">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">
               Class {selectedPaper.grade} • {selectedPaper.subject}
             </span>
-            <span className="text-zinc-500 ml-2">({selectedPaper.session})</span>
+            <span className="text-zinc-500 ml-1.5 hidden sm:inline">({selectedPaper.session})</span>
           </div>
 
           {/* Action Tools */}
-          <div className="flex items-center gap-2">
-            {/* Font size toggles */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Font size toggles (desktop) */}
             <button
               onClick={() => setFontSize(fontSize === 'normal' ? 'large' : fontSize === 'large' ? 'xl' : 'normal')}
-              className="rounded border border-zinc-200 bg-white px-2 py-1 text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200"
+              className="rounded border border-zinc-200 bg-white px-2 py-1 text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 hidden md:inline-block"
               title="Toggle font size"
             >
               Text Size ({fontSize})
@@ -107,28 +107,28 @@ ${selectedPaper.answerKeyContent}
             {selectedPaper.hasAnswerKey && (
               <button
                 onClick={() => setShowAnswerKey(!showAnswerKey)}
-                className={`rounded border px-2.5 py-1 font-medium transition-colors ${
+                className={`rounded border px-2 sm:px-2.5 py-1 font-medium transition-colors text-[11px] sm:text-xs ${
                   showAnswerKey
                     ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900'
                     : 'border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200'
                 }`}
               >
-                {showAnswerKey ? 'Show Questions' : 'View Solutions'}
+                {showAnswerKey ? 'Questions' : 'Solutions'}
               </button>
             )}
 
-            {/* Print */}
+            {/* Print (desktop) */}
             <button
               onClick={handlePrint}
               className="rounded border border-zinc-200 bg-white px-2 py-1 font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 hidden sm:inline-block"
             >
-              Print / PDF
+              Print
             </button>
 
             {/* Download */}
             <button
               onClick={handleDownload}
-              className="rounded bg-zinc-900 px-3 py-1 font-medium text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+              className="rounded bg-zinc-900 px-2.5 sm:px-3 py-1 font-medium text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 text-[11px] sm:text-xs"
             >
               Download
             </button>
@@ -136,7 +136,7 @@ ${selectedPaper.answerKeyContent}
             {/* Close */}
             <button
               onClick={() => setSelectedPaper(null)}
-              className="rounded p-1 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 ml-1 text-base font-bold leading-none"
+              className="rounded p-1 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 ml-0.5 text-base font-bold leading-none"
             >
               ✕
             </button>
@@ -144,8 +144,8 @@ ${selectedPaper.answerKeyContent}
         </div>
 
         {/* Paper Document Layout */}
-        <div className={`flex-1 overflow-y-auto p-4 sm:p-8 bg-zinc-100 dark:bg-zinc-950 ${getFontSizeClass()}`}>
-          <div className="mx-auto max-w-3xl rounded bg-white p-6 sm:p-10 shadow-sm border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 print:shadow-none print:border-none">
+        <div className={`flex-1 overflow-y-auto p-2 sm:p-8 bg-zinc-100 dark:bg-zinc-950 ${getFontSizeClass()}`}>
+          <div className="mx-auto max-w-3xl rounded bg-white p-4 sm:p-10 shadow-sm border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 print:shadow-none print:border-none">
             
             {/* Examination Header */}
             <div className="text-center border-b-2 border-zinc-900 dark:border-zinc-100 pb-4 mb-6">

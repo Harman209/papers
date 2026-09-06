@@ -48,7 +48,7 @@ export default function SearchFilters() {
         <div className="text-xs uppercase tracking-wider text-zinc-400 font-medium">
           1. Select Class
         </div>
-        <div className="flex items-center gap-6 sm:gap-8 text-base">
+        <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-sm sm:text-base">
           {GRADES.map((g) => {
             const isSelected = filters.grade === g || (filters.grade === 'All' && g === '12');
             return (
@@ -73,14 +73,14 @@ export default function SearchFilters() {
         <div className="text-xs uppercase tracking-wider text-zinc-400 font-medium">
           2. Examination
         </div>
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm">
           {availableExams.map((ex) => {
             const isSelected = filters.examType === ex.value;
             return (
               <button
                 key={ex.label}
                 onClick={() => setFilters((prev) => ({ ...prev, examType: ex.value }))}
-                className={`rounded px-3 py-1.5 transition-colors text-xs sm:text-sm ${
+                className={`rounded px-2.5 sm:px-3 py-1.5 transition-colors text-xs sm:text-sm ${
                   isSelected
                     ? 'bg-zinc-900 text-white font-medium dark:bg-zinc-100 dark:text-zinc-900'
                     : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700'
@@ -94,10 +94,10 @@ export default function SearchFilters() {
       </div>
 
       {/* 3. Year & Keyword Filter */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-zinc-100 dark:border-zinc-900">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-zinc-100 dark:border-zinc-900">
         
         {/* Year Tabs */}
-        <div className="flex items-center gap-3 text-xs">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs">
           <span className="text-zinc-400">Year:</span>
           {YEARS.map((y) => {
             const isSelected = filters.year === y;

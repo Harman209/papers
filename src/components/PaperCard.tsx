@@ -62,22 +62,22 @@ ${paper.answerKeyContent}
   return (
     <div 
       onClick={() => setSelectedPaper(paper)}
-      className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-5 sm:py-6 border-b border-zinc-100 dark:border-zinc-900 transition-colors hover:bg-zinc-50/50 dark:hover:bg-zinc-900/30 px-2 -mx-2 rounded cursor-pointer"
+      className="group flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 py-4 sm:py-5 border-b border-zinc-100 dark:border-zinc-900 transition-colors hover:bg-zinc-50/50 dark:hover:bg-zinc-900/30 px-2 rounded cursor-pointer"
     >
       {/* Title & Metadata */}
       <div className="space-y-1.5 max-w-xl">
-        <div className="flex items-baseline gap-2">
-          <h3 className="text-base sm:text-lg font-medium text-zinc-900 group-hover:text-zinc-600 dark:text-zinc-100 dark:group-hover:text-zinc-300 transition-colors leading-snug">
+        <div className="flex flex-wrap items-baseline gap-2">
+          <h3 className="text-sm sm:text-base font-medium text-zinc-900 group-hover:text-zinc-600 dark:text-zinc-100 dark:group-hover:text-zinc-300 transition-colors leading-snug">
             {paper.title}
           </h3>
           {paper.set && paper.set !== 'Standard / Common' && (
-            <span className="text-[11px] font-semibold text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 px-1.5 py-0.2 rounded shrink-0">
+            <span className="text-[10px] sm:text-[11px] font-semibold text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 px-1.5 py-0.5 rounded shrink-0">
               {paper.set}
             </span>
           )}
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-400">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] sm:text-xs text-zinc-400">
           <span>Class {paper.grade}</span>
           <span>•</span>
           <span>{paper.subject}</span>
@@ -90,14 +90,14 @@ ${paper.answerKeyContent}
           {paper.hasAnswerKey && (
             <>
               <span>•</span>
-              <span className="text-zinc-600 dark:text-zinc-300">Solution included</span>
+              <span className="text-zinc-600 dark:text-zinc-300 font-medium">Solution included</span>
             </>
           )}
         </div>
       </div>
 
       {/* Action Buttons */}
-      <div className="flex items-center gap-4 sm:gap-6 text-sm shrink-0 self-start sm:self-center">
+      <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm shrink-0 self-start sm:self-center pt-1 sm:pt-0">
         <button
           type="button"
           onClick={(e) => {

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 sm:px-8 py-10 sm:py-16 space-y-8 text-zinc-900 dark:text-zinc-100">
+    <div className="mx-auto max-w-3xl px-4 sm:px-8 py-8 sm:py-16 space-y-8 text-zinc-900 dark:text-zinc-100">
       
       {/* Header */}
       <div className="space-y-1 border-b border-zinc-100 pb-4 dark:border-zinc-900">
