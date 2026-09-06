@@ -40,13 +40,22 @@ export default function RootLayout({
           <PaperViewerModal />
           
           {/* Minimal Clean Footer */}
-          <footer className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 py-6 px-4 sm:px-6 text-xs text-zinc-500 dark:text-zinc-400">
-            <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div>
-                Swami Sant Dass Public School, Jalandhar • Library Resource
+          <footer className="border-t border-zinc-100 bg-white dark:border-zinc-900 dark:bg-zinc-950 py-6 px-6 sm:px-8 text-xs text-zinc-400">
+            <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://swamisantdass.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                >
+                  Swami Sant Dass Public School, Jalandhar
+                </a>
+                <span>•</span>
+                <span>Library Archive</span>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-5">
                 <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
                   Archive
                 </Link>
@@ -56,6 +65,14 @@ export default function RootLayout({
                 <Link href="/about" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
                   About
                 </Link>
+                <a
+                  href="https://github.com/Harman209/papers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                >
+                  MIT License / Contribute
+                </a>
               </div>
             </div>
           </footer>
