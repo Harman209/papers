@@ -3,6 +3,7 @@
 import React from 'react';
 import { Paper } from '@/types/paper';
 import { usePapers } from '@/context/PaperContext';
+import { downloadPaperPdf } from '@/utils/pdfGenerator';
 
 interface PaperCardProps {
   paper: Paper;
@@ -15,48 +16,7 @@ export default function PaperCard({ paper }: PaperCardProps) {
   const handleDownload = (e: React.MouseEvent) => {
     e.stopPropagation();
     incrementDownload(paper.id);
-
-    const content = `=====================================================
-SWAMI SANT DASS PUBLIC SCHOOL, JALANDHAR
-${paper.title} ${paper.set ? `(${paper.set})` : ''}
-Session: ${paper.session} | Max Marks: ${paper.maxMarks} | Time: ${paper.duration}
-Subject: ${paper.subject} | Grade: Class ${paper.grade}th (${paper.stream})
-Uploaded By: ${paper.uploadedBy}
-=====================================================
-
-GENERAL INSTRUCTIONS:
-${paper.generalInstructions.map((ins, idx) => `${idx + 1}. ${ins}`).join('\n')}
-
-${paper.sections.map(sec => `
------------------------------------------------------
-${sec.sectionTitle}
-[Instructions: ${sec.instructions}]
------------------------------------------------------
-${sec.questions.map(q => `
-${q.questionNumber}. (${q.marks} Mark${q.marks > 1 ? 's' : ''})
-${q.text}
-${q.subQuestions ? q.subQuestions.join('\n') : ''}
-${q.orAlternative ? `\n[OR]\n${q.orAlternative}` : ''}
-`).join('\n')}
-`).join('\n')}
-
-${paper.hasAnswerKey && paper.answerKeyContent ? `
-=====================================================
-MARKING SCHEME / SOLUTIONS:
-=====================================================
-${paper.answerKeyContent}
-` : ''}
-`;
-
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `SSDPS_${paper.subject.replace(/[^a-zA-Z0-9]/g, '_')}_Class${paper.grade}_${paper.set ? paper.set.replace(/[^a-zA-Z0-9]/g, '_') : ''}_${paper.year}.txt`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+    downloadPaperPdf(paper);
   };
 
   return (

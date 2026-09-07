@@ -102,19 +102,21 @@ test('Search is case-insensitive', () => {
   assert.equal(lower.length, 4);
 });
 
-// 4. DOWNLOAD FILENAME SANITIZATION
+// 4. DOWNLOAD FILENAME SANITIZATION & PDF EXPORT
 console.log('\n💾 4. Download & Export Safety');
 
-test('Filename sanitization cleans special characters properly', () => {
+test('Filename sanitization cleans special characters properly and enforces .pdf extension', () => {
   const rawSubject = 'Computer Science / IP';
-  const rawExam = 'PT-2 (Half Yearly)';
+  const rawSet = 'Set A';
+  const year = 2025;
   const sanitizedSubject = rawSubject.replace(/[^a-zA-Z0-9]/g, '_');
-  const sanitizedExam = rawExam.replace(/[^a-zA-Z0-9]/g, '_');
+  const sanitizedSet = rawSet ? `_${rawSet.replace(/[^a-zA-Z0-9]/g, '_')}` : '';
+  const filename = `SSDPS_${sanitizedSubject}_Class12${sanitizedSet}_${year}.pdf`;
   
-  assert.ok(!sanitizedSubject.includes('/'));
-  assert.ok(!sanitizedExam.includes('('));
-  assert.ok(!sanitizedExam.includes(')'));
-  assert.equal(sanitizedSubject, 'Computer_Science___IP');
+  assert.ok(!filename.includes('/'));
+  assert.ok(!filename.includes(' '));
+  assert.ok(filename.endsWith('.pdf'), 'Export must have .pdf extension');
+  assert.equal(filename, 'SSDPS_Computer_Science___IP_Class12_Set_A_2025.pdf');
 });
 
 // 5. SECURITY & PASSCODE GATE CHECK
